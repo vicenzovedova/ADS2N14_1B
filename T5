@@ -1,0 +1,17 @@
+public class Pilha {
+    private List<Object> pilha = new LinkedList<Object>();
+    
+    public void insere(Object o) {
+        this.pilha.add(o);
+    }
+        
+    public boolean isVazia() {
+        return this.pilha.size() == 0;
+    }
+  
+    public Object remove() {
+        if (!isVazia())
+            return this.pilha.remove(this.pilha.size() - 1);
+        return null;
+    }
+}
