@@ -1,0 +1,19 @@
+public class Binario {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Pilha p = new Pilha();
+        
+        p.insere(100);
+        p.insere(255);
+        p.insere(127);
+        p.insere(984651);
+        
+        while (!p.isVazia()) {
+            int num = (int) p.remove();
+            String bin = Integer.toBinaryString((Integer) num);
+            System.out.println(num + " em binario e " + bin);
+        }
+    }
+}
