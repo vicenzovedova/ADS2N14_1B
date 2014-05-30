@@ -1,0 +1,33 @@
+public class Palindromo {
+
+    public static boolean isPalindromo(String s) {  
+        int meio = s.length() / 2;  
+        for (int i = 0; i < meio; i++) {  
+            if (s.charAt(i) != s.charAt(s.length()-1 - i)) {  
+                return false;
+            }  
+        }  
+        return true;  
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Pilha p = new Pilha();
+        
+        p.insere("ana");
+        p.insere("amoreroma");
+        p.insere("11011");
+        p.insere("palavra");
+        
+        while (!p.isVazia()) {
+            String s = (String) p.remove();
+            if (isPalindromo(s)) {
+                System.out.println(s + " e palindromo.");
+            } else {
+                System.out.println(s + " nao e palindromo.");
+            }
+        }
+    }
+}
